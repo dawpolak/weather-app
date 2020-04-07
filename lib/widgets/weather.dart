@@ -102,11 +102,11 @@ class _WeatherState extends State<Weather> {
             }
             if (state is WeatherError) {
               return Text(
-                'Something went wrong!',
+                'Błąd!',
                 style: TextStyle(color: Colors.red),
               );
             }
-            return Center(child: Text('Please Select a Location'));
+            return Center(child: Text('Wyszukaj miasto'));
           },
         ),
       ),

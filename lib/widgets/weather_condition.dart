@@ -13,7 +13,7 @@ class WeatherConditions extends StatelessWidget {
 
   Image _mapConditionToImage(String icon) {
     Image image;
-    image = Image.network('http://openweathermap.org/img/wn/$icon@2x.png',scale: 0.7,);
+    image = Image.network('http://openweathermap.org/img/wn/$icon@2x.png',scale: 0.9,);
     return image;
   }
 }

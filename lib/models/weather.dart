@@ -34,9 +34,9 @@ class Weather {
     minTemp= json['main']['temp_min'].toDouble();
     maxTemp= json['main']['temp_max'].toDouble();
     pressure= json['main']['pressure'] as int;
-    sunrise= DateTime.fromMillisecondsSinceEpoch(json['sys']['sunrise']*1000).toUtc();
-
-    sunset= DateTime.fromMillisecondsSinceEpoch(json['sys']['sunset']*1000).toUtc();
+    int timezone = json['timezone'] as int;
+    sunrise= DateTime.fromMillisecondsSinceEpoch(json['sys']['sunrise']*1000).add(new Duration(seconds: timezone));
+    sunset= DateTime.fromMillisecondsSinceEpoch(json['sys']['sunset']*1000).add(new Duration(seconds: timezone));
     lastUpdated= DateTime.now();
     location= json['name'];
   }
